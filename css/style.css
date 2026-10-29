@@ -1,0 +1,188 @@
+/* TODO: Implementa un reset básico */
+*{
+  box-sizing: border-box;
+}
+
+/* TODO: Configura el html */
+html{
+  font-size: 100%;
+}
+
+/* TODO: Estilos base del body */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
+               'Helvetica Neue', Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: beige;
+}
+
+/* TODO: Define variables usando HSL */
+:root{
+  --color-primario: hsl(9,100,64);
+  --color-primario-oscuro: hsl(9,100,40);
+  --color-primario-claro: hsl(9,100,40);
+
+  --color-texto: hsl(0, 0, 20);
+  --color-texto-secundario: hsl(0, 0%, 45%);
+  --color-fondo: hsl(0, 0%, 98%);
+  --color-blanco: hsl(0, 0%, 100%);
+  
+  --espaciado-pequeno: 8px;
+  --espaciado-medio: 16px;
+  --espaciado-grande: 24px;
+}
+
+/* TODO: Estiliza el header usando Flexbox */
+.header{
+  background-color: burlywood;
+  padding: 1rem;
+  box-shadow: orange;
+}
+
+.header-contenido{
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.titulo-principal{
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-blanco)
+}
+
+.descripcion{
+  font-size: 1.1rem;
+  color: var(--color-primario-claro);
+}
+
+/* TODO: Implementa Grid para la galería */
+.contenedor{
+  max-width: 75rem;
+  margin: auto;
+  padding: 1rem;
+}
+
+.galeria{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.foto-tarjeta{
+  background-color: bisque;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px var(--color-primario-oscuro);
+  overflow: hidden;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* TODO: Estiliza las tarjetas */
+.foto-tarjeta img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.foto-info{
+  padding: 1rem;
+  display:flex;
+flex-direction: column;
+}
+
+.foto-titulo{
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-texto-secundario);
+}
+
+.foto-descripcion{
+  font-size: 1rem;
+  color: var(--color-primario-claro);
+  margin: 0;
+}
+
+/* TODO: Efecto hover */
+.foto-tarjeta:hover:hover{
+   transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.boton-comprar{
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  box-shadow: 0 2px 8px var(--color-primario-oscuro);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  display: flex;
+}
+
+/* TODO: Estiliza el footer */
+.footer{
+  background-color: var(--color-primario-oscuro);
+  color: var(--color-primario-claro);
+  text-align: center;
+  padding: 2rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .galeria {
+    grid-template-columns:repeat(2, 1fr)
+  }
+  
+  .titulo-principal {
+    font-size:2rem;
+  }
+}
+
+/* TODO: Móviles - 1 columna */
+@media (max-width: 480px) {
+  .galeria {
+    grid-template-columns: 1fr;
+  }
+  
+  .titulo-principal {
+    font-size: 1.5rem;
+  }
+  
+  .contenedor {
+    padding: 0.5rem;
+  }
+}
+
+/* 1.  ¿Qué significa cada valor en hsl()?
+ *     H (Hue): Matiz o tono del color. Se mide en grados de 0 a 360.
+ *    Por ejemplo, 0° es rojo, 120° es verde y 240° es azul.
+ *    - S (Saturation): Saturación. Indica qué tan intenso o apagado
+ *      es el color. Se expresa en porcentaje, de 0% a 100%.
+ *    - L (Lightness): Luminosidad. Indica qué tan claro u oscuro
+ *      es el color. Se expresa en porcentaje, de 0% a 100%.
+ *
+ * 2. ¿Por qué HSL puede ser más útil que HEX o RGB?
+ *    - Permite cambiar fácilmente la intensidad y la luminosidad
+ *      de un color sin tener que elegir otro código desde cero.
+ *    - Facilita crear una paleta de colores relacionados, por ejemplo,
+ *      un color principal y sus versiones más claras y más oscuras.
+ *
+ * 3. Ejemplo práctico: ¿Cuándo usarías HSL en un proyecto real?
+ *    - Lo usaría para diseñar una página web, definiendo un color
+ *      principal para los botones y creando versiones más claras
+ *      para los fondos y más oscuras para los efectos al pasar
+ *      el mouse.
+ */
+
+
+
+
+
